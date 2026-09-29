@@ -1,10 +1,10 @@
 /* Sierpe — classic OSS project site. Orange & white. No JavaScript. */
 
 :root {
-  --orange: #e8590c;       /* accent: rules, hover, code-block edge */
-  --orange-dark: #c44a08;  /* bars, links: 4.85:1 on white, passes AA at 14px */
-  --orange-deep: #a33d06;  /* active / hover state on bars */
-  --orange-pale: #fff3ec;
+  --accent: #1f8a78;       /* rules, hover, code-block edge */
+  --accent-dark: #137663;  /* bars, links: 5.53:1 on white, passes AA at 14px */
+  --accent-deep: #0c5648;  /* active / hover state on bars */
+  --accent-pale: #e9f6f3;
   --ink: #1f1f1f;
   --muted: #5c5c5c;
   --line: #dcdcdc;
@@ -29,8 +29,8 @@ body {
 
 /* ---- top bar ---- */
 #topbar {
-  background: var(--orange-dark);
-  border-bottom: 3px solid var(--orange-deep);
+  background: var(--accent-dark);
+  border-bottom: 3px solid var(--accent-deep);
 }
 #topbar .wrap {
   display: flex;
@@ -52,8 +52,8 @@ body {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0;
-  color: #ffd9c4;
-  border: 1px solid #ffb48a;
+  color: #cdeee7;
+  border: 1px solid #8fd0c2;
   border-radius: 3px;
   padding: 1px 6px;
 }
@@ -65,7 +65,7 @@ body {
   padding: 14px 12px;
   display: inline-block;
 }
-#topbar nav a:hover, #topbar nav a.active { background: var(--orange-deep); }
+#topbar nav a:hover, #topbar nav a.active { background: var(--accent-deep); }
 @media (max-width: 640px) {
   #topbar .wrap { flex-direction: column; align-items: flex-start; padding: 8px 20px; gap: 2px; }
   #topbar nav { display: flex; flex-wrap: wrap; margin-left: -12px; }
@@ -82,12 +82,12 @@ h2 {
   margin: 32px 0 10px;
   padding-bottom: 4px;
   border-bottom: 1px solid var(--line);
-  color: var(--orange-dark);
+  color: var(--accent-dark);
 }
 h3 { font-size: 16px; margin: 22px 0 6px; }
 
-a { color: var(--orange-dark); }
-a:hover { color: var(--orange); }
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
 
 code, pre {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -97,7 +97,7 @@ code { background: var(--box); padding: 1px 4px; border-radius: 3px; }
 pre {
   background: var(--box);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--accent);
   padding: 10px 12px;
   overflow-x: auto;
 }
@@ -110,8 +110,8 @@ th { background: var(--box); }
 blockquote {
   margin: 12px 0;
   padding: 8px 14px;
-  background: var(--orange-pale);
-  border-left: 3px solid var(--orange);
+  background: var(--accent-pale);
+  border-left: 3px solid var(--accent);
 }
 blockquote p { margin: 4px 0; }
 
@@ -165,7 +165,7 @@ blockquote p { margin: 4px 0; }
 .sidebox h3 {
   margin: 0;
   padding: 7px 12px;
-  background: var(--orange-dark);
+  background: var(--accent-dark);
   color: #fff;
   font-size: 14px;
 }
@@ -198,7 +198,7 @@ blockquote p { margin: 4px 0; }
   margin: 18px 0;
   padding: 0;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--accent);
   background: var(--box);
   max-width: none;
 }
@@ -216,7 +216,7 @@ blockquote p { margin: 4px 0; }
   top: 8px;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-weight: 700;
-  color: var(--orange-dark);
+  color: var(--accent-dark);
 }
 #intro ol code { background: #fff; border: 1px solid #e5e5e5; }
 
