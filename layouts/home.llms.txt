@@ -23,7 +23,7 @@ Minimal deploy (full recipes in the Installation page): run {{ site.Params.image
 - [OpenAPI specification](https://raw.githubusercontent.com/zkCaleb-dev/sierpe/main/docs/openapi.yaml): the authoritative API contract; when any doc disagrees with it, the doc is wrong
 - [Prometheus metrics](https://raw.githubusercontent.com/zkCaleb-dev/sierpe/main/docs/METRICS.md): every metric and which ones deserve alerts
 - [Changelog](https://raw.githubusercontent.com/zkCaleb-dev/sierpe/main/CHANGELOG.md): complete release history
-- [Source code](https://github.com/zkCaleb-dev/sierpe)
+- [Source code](https://github.com/sierpeproject/sierpe)
 
 ## Optional
 - [Release announcements]({{ absURL "news/" }}): one post per release, with the reasoning behind each change

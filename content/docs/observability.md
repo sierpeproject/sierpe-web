@@ -12,7 +12,7 @@ alertable.
 
 `/metrics` exposes Prometheus metrics from a private registry. The full
 catalogue — and which ones deserve alerts — is in
-[docs/METRICS.md](https://github.com/zkCaleb-dev/sierpe/blob/main/docs/METRICS.md).
+[docs/METRICS.md](https://github.com/sierpeproject/sierpe/blob/main/docs/METRICS.md).
 The headline signals:
 
 - **`sierpe_tip_lag_seconds`** — age of the last committed ledger against
@@ -41,7 +41,7 @@ The headline signals:
 ## Grafana
 
 A ready-made dashboard ships in the repository at
-[deploy/grafana/sierpe-dashboard.json](https://github.com/zkCaleb-dev/sierpe/blob/main/deploy/grafana/sierpe-dashboard.json)
+[deploy/grafana/sierpe-dashboard.json](https://github.com/sierpeproject/sierpe/blob/main/deploy/grafana/sierpe-dashboard.json)
 — eight panels covering the signals above.
 
 ## Status page

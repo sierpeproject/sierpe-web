@@ -5,10 +5,10 @@ description: The pipeline, the data model, and the design decisions behind the a
 ---
 
 The full design document lives at
-[docs/DESIGN.md](https://github.com/zkCaleb-dev/sierpe/blob/main/docs/DESIGN.md);
+[docs/DESIGN.md](https://github.com/sierpeproject/sierpe/blob/main/docs/DESIGN.md);
 the study behind it — 29 principles distilled from production indexers,
 each with its source — at
-[docs/KNOWLEDGE.md](https://github.com/zkCaleb-dev/sierpe/blob/main/docs/KNOWLEDGE.md).
+[docs/KNOWLEDGE.md](https://github.com/sierpeproject/sierpe/blob/main/docs/KNOWLEDGE.md).
 
 ## The pipeline
 

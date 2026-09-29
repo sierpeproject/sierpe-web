@@ -20,6 +20,12 @@ The site follows every sierpe release. One branch, one commit, one PR.
    `origin/main`.
 2. **`hugo.toml` params**: set `version` (`vX.Y.Z`), `released` (tag date,
    `YYYY-MM-DD`), `image` (`ghcr.io/zkcaleb-dev/sierpe:vX.Y.Z`).
+   Then grep `content/docs/` for the PREVIOUS version tag: `install.md`
+   hardcodes the image tag in several places (tables, compose, Railway,
+   ECS, docker run) and they rot silently — they sat on v1.5.2 for five
+   releases once. The image namespace stays `ghcr.io/zkcaleb-dev` until a
+   release publishes under the `sierpeproject` org; repo links use
+   `github.com/sierpeproject/sierpe`.
 3. **News post** `content/news/sierpe-X-Y-Z-released.md`:
    - Front matter: `title` (version + an angle, not just the number), `date`
      (ISO with time, UTC), `summary` (one or two sentences).

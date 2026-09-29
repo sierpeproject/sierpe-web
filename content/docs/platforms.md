@@ -149,4 +149,4 @@ additionally driven end-to-end by a fresh-context assistant given nothing
 but this site. Two product changes came out of it — the simple-protocol
 fix and the built-in healthcheck — and one decision not to change
 anything (`PORT`). Verdicts marked *unverified* are exactly that; if you
-run Sierpe somewhere not listed, [tell us](https://github.com/zkCaleb-dev/sierpe/discussions).
+run Sierpe somewhere not listed, [tell us](https://github.com/sierpeproject/sierpe/discussions).

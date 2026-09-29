@@ -82,4 +82,4 @@ out to be exactly what keeps language models from lying, too.
 An MCP server — exposing a running instance as tools an assistant can
 call natively, instead of raw HTTP — is a natural next step we are
 exploring. It is not committed yet; if you would use one,
-[say so in Discussions](https://github.com/zkCaleb-dev/sierpe/discussions).
+[say so in Discussions](https://github.com/sierpeproject/sierpe/discussions).
