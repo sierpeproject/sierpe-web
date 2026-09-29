@@ -1,6 +1,6 @@
 # CLAUDE.md — rules of this repository
 
-sierpe-web is the website for [Sierpe](https://github.com/zkCaleb-dev/sierpe),
+sierpe-web is the website for [Sierpe](https://github.com/sierpeproject/sierpe),
 a self-hosted Stellar indexer. Built with Hugo: **no theme, hand-written
 layouts, no JavaScript**. Deployed on Vercel (framework preset: Hugo).
 

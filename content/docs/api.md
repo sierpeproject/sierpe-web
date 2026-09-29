@@ -5,7 +5,7 @@ description: The v1 REST surface — contracts, events, state, and the honesty c
 ---
 
 The authoritative specification is
-[docs/openapi.yaml](https://github.com/zkCaleb-dev/sierpe/blob/main/docs/openapi.yaml)
+[docs/openapi.yaml](https://github.com/sierpeproject/sierpe/blob/main/docs/openapi.yaml)
 in the repository. This page is the map.
 
 ## Admin surface (bearer-authenticated)
@@ -95,7 +95,7 @@ across `tokenContractId`.
 | `/health` | Liveness |
 | `/ready` | Readiness — 503 while catching up |
 | `/status` | Cursor position, tip distance, per-contract summary |
-| `/metrics` | Prometheus metrics ([documented](https://github.com/zkCaleb-dev/sierpe/blob/main/docs/METRICS.md)) |
+| `/metrics` | Prometheus metrics ([documented](https://github.com/sierpeproject/sierpe/blob/main/docs/METRICS.md)) |
 
 ## The honesty contract
 
