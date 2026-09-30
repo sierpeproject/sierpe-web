@@ -86,9 +86,16 @@ Each row: `id` (shared by the two rows of a self-transfer — key on `id` + `rol
 token units, as a string), `rawXdr` (since 1.6.0: the base64
 `ContractEvent` the movement was decoded from — the emitting token is
 usually not registered, so this is the only place the original bytes
-exist; absent on rows ingested before the 1.6.0 migration), `ledger`,
+exist; absent on rows ingested before the 1.6.0 migration), `txHash`
+(since 1.12.0: the hex hash of the emitting transaction), `ledger`,
 `ledgerClosedAt`. The page carries the usual `cursor`, `scanStatus`,
 `coverage` and a `note`.
+
+Movements indexed before 1.12.0 have no stored hash; the authenticated
+`POST /v1/admin/movements/tx-hashes` fills them without any replay —
+local joins over rows the database already trusts first, the remainder
+resolved from the public History Archives in application order. It is
+idempotent and paced by the caller: repeat the POST until `done: true`.
 
 Because ingestion downloads whole ledgers, the descending backfill derives
 movement history from **before** the contract was registered — the thing
