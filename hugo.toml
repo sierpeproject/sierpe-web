@@ -6,9 +6,9 @@ disableKinds = ['taxonomy', 'term']
 [params]
   description = 'A self-hosted Stellar indexer. Register a contract, get its complete history behind an honest REST API.'
   github = 'https://github.com/sierpeproject/sierpe'
-  version = 'v1.11.0'
+  version = 'v1.12.0'
   released = '2026-09-30'
-  image = 'ghcr.io/zkcaleb-dev/sierpe:v1.11.0'
+  image = 'ghcr.io/zkcaleb-dev/sierpe:v1.12.0'
 
 [menus]
   [[menus.main]]
