@@ -12,8 +12,8 @@ schema and migrations.
 
 | Tag | Contents |
 |---|---|
-| `ghcr.io/zkcaleb-dev/sierpe:v1.10.2` | Slim: static, distroless, multi-arch. Indexes from the RPC and clamps honestly at the retention wall |
-| `ghcr.io/zkcaleb-dev/sierpe:v1.10.2-full` | Slim plus `stellar-core`, to heal history below RPC retention. **linux/amd64 only** — see [the archive leg](/docs/archive-leg/) |
+| `ghcr.io/zkcaleb-dev/sierpe:v1.11.0` | Slim: static, distroless, multi-arch. Indexes from the RPC and clamps honestly at the retention wall |
+| `ghcr.io/zkcaleb-dev/sierpe:v1.11.0-full` | Slim plus `stellar-core`, to heal history below RPC retention. **linux/amd64 only** — see [the archive leg](/docs/archive-leg/) |
 
 Start with the slim image. Move to `-full` when you need history older
 than the roughly seven days an RPC serves.
@@ -38,8 +38,8 @@ is needed (it matches the one
 ```yaml
 services:
   sierpe:
-    image: ghcr.io/zkcaleb-dev/sierpe:v1.10.2
-    # image: ghcr.io/zkcaleb-dev/sierpe:v1.10.2-full   # archive leg: heals history below RPC retention (amd64)
+    image: ghcr.io/zkcaleb-dev/sierpe:v1.11.0
+    # image: ghcr.io/zkcaleb-dev/sierpe:v1.11.0-full   # archive leg: heals history below RPC retention (amd64)
     restart: unless-stopped
     depends_on:
       db:
@@ -96,7 +96,7 @@ account or build step needed:
 1. **New Project → Deploy PostgreSQL.** A fresh Railway Postgres is
    empty, which is what Sierpe needs; do not reuse a database another app
    owns. Note the service name on the card (default `Postgres`).
-2. **+ New → Docker Image**, type `ghcr.io/zkcaleb-dev/sierpe:v1.10.2`.
+2. **+ New → Docker Image**, type `ghcr.io/zkcaleb-dev/sierpe:v1.11.0`.
    The first deploy fails until the variables exist — expected.
 3. **Variables** tab of the new service:
    - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}` — the reference works
@@ -139,7 +139,7 @@ nothing public.
   the image carries the public root CAs (it talks HTTPS to the RPC) but
   not Amazon's RDS CA, so full verification would fail. This applies to
   every managed Postgres with a private CA (RDS, Supabase, Neon…).
-- **Task definition**: image `ghcr.io/zkcaleb-dev/sierpe:v1.10.2`,
+- **Task definition**: image `ghcr.io/zkcaleb-dev/sierpe:v1.11.0`,
   container port `8080`, `NETWORK` as plain environment, `DATABASE_URL`
   and `ADMIN_TOKEN` as ECS `secrets` from Secrets Manager. 0.5 vCPU /
   1 GiB is a sound start (see sizing below). No volume, no EFS. Use the
@@ -165,7 +165,7 @@ docker run -d -p 8080:8080 \
   -e DATABASE_URL=postgres://user:pass@host:5432/sierpe \
   -e NETWORK=testnet \
   -e ADMIN_TOKEN=$(openssl rand -hex 32) \
-  ghcr.io/zkcaleb-dev/sierpe:v1.10.2
+  ghcr.io/zkcaleb-dev/sierpe:v1.11.0
 ```
 
 ## Operating it on any cloud — the facts that matter
