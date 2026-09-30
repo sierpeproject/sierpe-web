@@ -37,6 +37,17 @@ kinds default is derived from the classification. *(Since 1.6.0.)*
 | `GET /v1/contracts/:id/trustlines/history` | Trustline changes with before/after balances |
 | `GET /v1/contracts/:id/movements` | Token transfers this contract took part in, whoever emitted them |
 
+### Events
+
+The getEvents-v2-compatible stream: positional `topic0`–`topic3` filters
+(exact base64 ScVals), a ledger range, `limit` and the opaque `cursor`.
+Since 1.11.0, `include=rawXdr` adds the stored `ContractEvent` to every
+event on the page — the original bytes, for consumers that re-emit events
+into their own pipelines rather than re-encode our decode. The parameter
+is presentation only: it is accepted beside a cursor and never encoded in
+one, and without it the response does not change by a byte. An unknown
+`include` value is a 400.
+
 ### Token transfers
 
 SEP-41 movements (transfer, mint, burn, clawback) decoded into structured
