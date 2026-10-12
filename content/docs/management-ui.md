@@ -14,6 +14,11 @@ same surface the REST API does — and since 1.13.0 it reads that surface
 [decoded](/docs/api/#decoded-values), so you see
 `{"symbol":"tw_fund"}` where the wire carries base64.
 
+The page is organized as three global tabs — **Contracts**, **Overview**
+and **Admin** — with a status strip beneath them that keeps the vital
+numbers (cursor, tip lag, backfills, gaps, archive leg) in sight from
+every section.
+
 ## What it gives you
 
 - **A searchable contract list** — loaded once, searched in the page by
