@@ -38,6 +38,27 @@ kinds default is derived from the classification. *(Since 1.6.0.)*
 | `GET /v1/contracts/:id/trustlines/history` | Trustline changes with before/after balances |
 | `GET /v1/contracts/:id/movements` | Token transfers this contract took part in, whoever emitted them |
 
+### Decoded values
+
+Since 1.13.0, `xdrFormat=json` — Stellar RPC's own parameter, with its
+values and its exact JSON rendering — works on events, state, state
+history and movements. Every base64 ScVal gains a decoded sibling:
+`topicJson` and `valueJson` on events and movements, `keyJson` and
+`valueJson` on state, plus `preJson` and `postJson` on state history. A
+topic reads `{"symbol":"tw_fund"}` instead of
+`AAAADwAAAAd0d19mdW5kAA==`. The base64 stays (RPC drops it), so a JSON
+page is a strict superset of the default one and the topic and key
+filters keep working unchanged.
+
+The parameter is presentation only: accepted beside a cursor, never
+encoded in one — repeat it on every page, exactly as with RPC. Without
+it, responses do not change by a byte. A value the server cannot render
+is served as `null` with its base64 intact and counted in the
+`sierpe_api_xdr_json_failures_total` metric; one such value never fails
+a page. On the wire, as with RPC, `&`, `<` and `>` inside strings arrive
+escaped as `&`, `<` and `>` — compare responses as JSON,
+not as text.
+
 ### Events
 
 The getEvents-v2-compatible stream: positional `topic0`–`topic3` filters
@@ -47,7 +68,8 @@ event on the page — the original bytes, for consumers that re-emit events
 into their own pipelines rather than re-encode our decode. The parameter
 is presentation only: it is accepted beside a cursor and never encoded in
 one, and without it the response does not change by a byte. An unknown
-`include` value is a 400.
+`include` value is a 400. The raw envelope gets no decoded sibling —
+only the ScVal fields inside it have a promised JSON shape.
 
 ### Token transfers
 
@@ -91,6 +113,16 @@ exist; absent on rows ingested before the 1.6.0 migration), `txHash`
 (since 1.12.0: the hex hash of the emitting transaction), `ledger`,
 `ledgerClosedAt`. The page carries the usual `cursor`, `scanStatus`,
 `coverage` and a `note`.
+
+Since 1.13.0 a movement also carries `asset` and `decimals` — but only
+when the emitting token is **proven** to be the Stellar Asset Contract
+for that asset: the SEP-0011 string in the event's last topic must
+derive, under the instance's own network passphrase, to exactly the
+contract id that emitted it. Any custom token can name any asset in its
+events, so an unproven token gets neither field rather than a guess.
+Under [`xdrFormat=json`](#decoded-values) a movement additionally
+renders the topics and data of its `rawXdr` as `topicJson` and
+`valueJson`.
 
 Movements indexed before 1.12.0 have no stored hash; the authenticated
 `POST /v1/admin/movements/tx-hashes` fills them without any replay —
