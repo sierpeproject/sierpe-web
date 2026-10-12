@@ -1,6 +1,7 @@
 ---
 title: Architecture
 weight: 50
+group: Operations & internals
 description: The pipeline, the data model, and the design decisions behind the appliance.
 ---
 

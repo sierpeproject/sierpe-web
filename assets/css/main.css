@@ -57,6 +57,7 @@ body {
   border-radius: 3px;
   padding: 1px 6px;
 }
+#topbar nav { display: flex; }
 #topbar nav a {
   color: #fff;
   text-decoration: none;
@@ -232,8 +233,9 @@ blockquote p { margin: 4px 0; }
 article .date { margin-bottom: 12px; }
 
 /* ---- docs list ---- */
+.doclist { max-width: var(--measure); }
 .doclist h3 { margin-bottom: 2px; }
-.doclist p { margin: 0 0 14px; color: var(--muted); }
+.doclist p { margin: 0 0 18px; color: var(--muted); }
 
 /* ---- previous / next at the end of a docs page ---- */
 .pager {

@@ -1,5 +1,9 @@
 ---
 title: Documentation
+groups:
+  - Getting started
+  - Interfaces & reference
+  - Operations & internals
 ---
 
 Everything you need to deploy Sierpe and query your contracts' history.

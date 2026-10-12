@@ -1,6 +1,7 @@
 ---
 title: The embedded UI
 weight: 25
+group: Interfaces & reference
 description: A management interface baked into the binary — status, contracts, and a data explorer, with no build system and no external assets.
 ---
 

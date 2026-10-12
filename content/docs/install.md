@@ -1,6 +1,7 @@
 ---
 title: Installation
 weight: 10
+group: Getting started
 description: Deploy the container on Railway, Docker Compose, or any platform that runs OCI images.
 ---
 

@@ -12,9 +12,20 @@
   {{ end }}
 {{ else }}
   <div class="doclist">
-  {{ range .RegularPages.ByWeight }}
+  {{ with .Params.groups }}
+    {{ range . }}
+      {{ $group := . }}
+      <h2>{{ $group }}</h2>
+      {{ range where $.RegularPages.ByWeight "Params.group" $group }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Description }}</p>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ range .RegularPages.ByWeight }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     <p>{{ .Description }}</p>
+    {{ end }}
   {{ end }}
   </div>
 {{ end }}

@@ -1,6 +1,7 @@
 ---
 title: AI assistants & agents
 weight: 45
+group: Interfaces & reference
 description: Machine-readable docs at /llms.txt, how to point an agent at the API, and why the honesty contract is what makes agent answers trustworthy.
 ---
 

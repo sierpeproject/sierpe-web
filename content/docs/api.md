@@ -1,6 +1,7 @@
 ---
 title: API reference
 weight: 30
+group: Interfaces & reference
 description: The v1 REST surface — contracts, events, state, and the honesty contract every response follows.
 ---
 

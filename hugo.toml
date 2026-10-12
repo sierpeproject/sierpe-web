@@ -1,4 +1,4 @@
-baseURL = 'https://sierpe-web.vercel.app/'
+baseURL = 'https://www.sierpeproject.org/'
 locale = 'en-us'
 title = 'Sierpe'
 disableKinds = ['taxonomy', 'term']

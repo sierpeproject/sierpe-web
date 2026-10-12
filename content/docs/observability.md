@@ -1,6 +1,7 @@
 ---
 title: Observability
 weight: 40
+group: Operations & internals
 description: Prometheus metrics, the Grafana dashboard, and the alerts that matter.
 ---
 
