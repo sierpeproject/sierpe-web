@@ -1,6 +1,7 @@
 ---
 title: The archive leg
 weight: 35
+group: Operations & internals
 description: How Sierpe reaches history no RPC serves anymore — and why it verifies itself before writing a single healed ledger.
 ---
 

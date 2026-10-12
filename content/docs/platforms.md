@@ -1,6 +1,7 @@
 ---
 title: Where it runs
 weight: 15
+group: Getting started
 description: Every deployment target we evaluated — what works, what needs one setting, what fails and why — plus the constraints that let you judge a platform we did not list.
 ---
 

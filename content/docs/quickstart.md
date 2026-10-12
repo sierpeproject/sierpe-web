@@ -1,6 +1,7 @@
 ---
 title: Quickstart
 weight: 20
+group: Getting started
 description: Register a contract and query its complete history in five minutes.
 ---
 
