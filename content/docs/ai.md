@@ -46,6 +46,12 @@ those credentials. Endpoints: /v1/contracts (list),
 /v1/contracts/{id}/{events|state|transfers|trustlines|movements}.
 
 Rules you must follow:
+- Add xdrFormat=json to reads of events, state, state/history and
+  movements: every base64 ScVal gains a decoded JSON sibling (topicJson,
+  valueJson, keyJson, preJson, postJson) you can actually reason about.
+  Repeat the parameter on every page; it is never encoded in a cursor.
+- A null *Json beside a base64 value means the server could not render
+  it — quote the base64, do not guess its contents.
 - Check `coverage` and `scanStatus` on every response. An empty page with
   partial coverage means "not indexed here", NOT "it never happened" —
   say which, based on the declared range.
@@ -54,6 +60,9 @@ Rules you must follow:
   amounts across different tokenContractId values — they are raw base
   units of different tokens.
 - Amounts are exact integers in raw token units (i128); do not round.
+  A movement carrying asset and decimals is server-proven SAC metadata
+  you may use to scale its amount for display; absent fields mean
+  unproven — leave the amount raw and say so.
 ```
 
 Registering contracts (POST/DELETE) needs the `ADMIN_TOKEN` bearer. Only
